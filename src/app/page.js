@@ -1,9 +1,13 @@
 "use client"
-import "./page.css"
+
+import CarouselComponent from "./components/carrousel";
+
+ 
+// Componente Home
 export default function Home() {
   return (
-    <main  >
-      
+    <main>
+      <CarouselComponent/>
     </main>
-  )
+  );
 }
