@@ -1,0 +1,43 @@
+/* FoodList.module.css */
+
+.foodList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 255, 255, 0.295);
+    
+     
+  }
+  
+  .foodItem {
+    width: calc(20% - 20px); /* Ajusta el ancho según tus necesidades */
+    margin: 10px;
+    border: 1px solid #dddddd; /* Borde opcional para separar elementos */
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  /* Estilo adicional al pasar el ratón por encima */
+  .foodItem:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 767px) {
+    .foodItem {
+      width: calc(100% - 20px);
+    }
+  }
+  .ingredients {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+  
+  }
+  .name{
+    font-family: Merriweather;
+    color: #590202;
+    font-size: 24px;
+  }

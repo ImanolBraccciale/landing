@@ -1,19 +1,28 @@
 "use client"
+import styles from "./FoodList.module.css"
+import Image from "next/image";
+
 export function renderSectionContent(section) {
     const comidas = {
         pizzas: [
-          { nombre: 'Margarita', ingredientes: ['Tomate', 'Queso', 'Albahaca'], imagen: '/images/margarita.jpg' },
-          { nombre: 'Pepperoni', ingredientes: ['Tomate', 'Queso', 'Pepperoni'], imagen: '/images/pepperoni.jpg' },
+          { nombre: 'Margarita', ingredientes: ['Tomate', 'Queso', 'Albahaca'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
+          { nombre: 'Pepperoni', ingredientes: ['Tomate', 'Queso', 'Pepperoni'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
           // Agrega más comidas según sea necesario
         ],
         empanadas: [
-          { nombre: 'Carne', ingredientes: ['Carne molida', 'Cebolla', 'Condimentos'], imagen: '/images/carne.jpg' },
-          { nombre: 'Pollo', ingredientes: ['Pollo desmenuzado', 'Cebolla', 'Condimentos'], imagen: '/images/pollo.jpg' },
+          { nombre: 'Carne', ingredientes: ['Carne molida', 'Cebolla', 'Condimentos'], imagen: require('../../assets/Foods/Pizzas/pizza.jpg')  },
+          { nombre: 'Pollo', ingredientes: ['Pollo desmenuzado', 'Cebolla', 'Condimentos'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
           // Agrega más comidas según sea necesario
         ],
         lomos: [
-          { nombre: 'Lomo Completo', ingredientes: ['Lomo', 'Jamón', 'Queso'], imagen: '/images/lomo_completo.jpg' },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen: '/images/lomo_queso.jpg' },
+          { nombre: 'Lomo Completo', ingredientes: ['Lomo', 'Jamón', 'Queso'], imagen: require('../../assets/Foods/Pizzas/pizza.jpg')   },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
+          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
           // Agrega más comidas según sea necesario
         ],
       };
@@ -21,15 +30,19 @@ export function renderSectionContent(section) {
       const comidasSeccion = comidas[section] || [];
 
       return (
-        <div>
+        <div className={styles.foodList}>
          
           {comidasSeccion.map((comida, index) => (
-            <div key={index}>
-              <h3>{comida.nombre}</h3>
-              {/* <img src={comida.imagen} alt={comida.nombre} style={{ maxWidth: '100%' }} /> */}
-              <ul>
+            <div key={index} className={styles.foodItem}>
+              <h3 className={styles.name}>{comida.nombre}</h3>
+              { 
+                <Image src={comida.imagen} alt={comida.nombre}   width={230}
+                height={150} background-size={"cover"} /> 
+            
+                }
+              <ul >
                 {comida.ingredientes.map((ingrediente, i) => (
-                  <li key={i}>{ingrediente}</li>
+                  <li key={i} className={styles.ingredients} >{ingrediente}</li>
                 ))}
               </ul>
             </div>
