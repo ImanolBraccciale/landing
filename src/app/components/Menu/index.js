@@ -1,3 +1,4 @@
+"use client"
 export const comidas = {
     pizzas: [
       { nombre: 'Margarita', ingredientes: ['Tomate', 'Queso', 'Albahaca'], imagen: require('../../assets/Foods/Pizzas/pizza.jpg') },
