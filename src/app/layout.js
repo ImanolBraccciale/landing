@@ -1,4 +1,4 @@
-"use client"
+
 import { Inter } from 'next/font/google'
 import NavBar from './components/NavBar/page'
 import Footer from './components/Footer/page'
