@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { actualizarCantidad, enviarPorWhatsApp, handleClickOutside } from '../utils/carrito';
 
 export function Carrito({ carrito, toggleCarrito }) {
-  const [carritoActualizado, setCarrito] = useState(carrito);
+  const [carritoActualizado, setCarrito] = useState(carrito || []);
   const menuWSP = {
     mensaje: `¡Hola! Quiero hacer un pedido:\n${carritoActualizado
       .map((item) => `${item.nombre} x ${item.cantidad}`)
