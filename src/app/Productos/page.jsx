@@ -1,7 +1,6 @@
 "use client"
 import React, { useState } from 'react';
- 
-import styles from "./Productos.module.css"
+import   "./Productos.css"
 import { renderSectionContent } from '../components/Food/food';
 
 export default function Productos() {
@@ -10,20 +9,20 @@ export default function Productos() {
   const handleSectionClick = (section) => {
     setCurrentSection(section);
   };
-
+  
   return (
-    <section className={styles.background}>
-      <h3 className={styles.tittle}>Productos deliciosos de nuestro menú</h3>
+    <section className="backgroundP">
+      <h3 className="tittleP">Productos deliciosos de nuestro menú</h3>
      
-      <nav className={styles.navbar}>
-        <ul className={styles.navList}>
-          <li className={currentSection === 'pizzas' ? styles.active : ''} onClick={() => handleSectionClick('pizzas')}>
+      <nav className="navbarP">
+        <ul className="navListP">
+          <li className={currentSection === 'pizzas' ? "active" : ''} onClick={() => handleSectionClick('pizzas')}>
             Pizzas
           </li>
-          <li className={currentSection === 'empanadas' ? styles.active : ''} onClick={() => handleSectionClick('empanadas')}>
+          <li className={currentSection === 'empanadas' ? "active" : ''} onClick={() => handleSectionClick('empanadas')}>
             Empanadas
           </li>
-          <li className={currentSection === 'lomos' ? styles.active : ''} onClick={() => handleSectionClick('lomos')}>
+          <li className={currentSection === 'lomos' ? "active" : ''} onClick={() => handleSectionClick('lomos')}>
             Lomos
           </li>
         </ul>

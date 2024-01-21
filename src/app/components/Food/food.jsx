@@ -1,53 +1,53 @@
-"use client"
-import styles from "./FoodList.module.css"
-import Image from "next/image";
+// FoodList.js
+import React, { useState } from 'react';
+ 
+import Image from 'next/image';
+import Carrito from '../Carrito/page';
+import { comidas } from '../Menu';
+import styles from './FoodList.module.css';
+import CarritoButton from '../ButtonCart/page';
+import { agregarAlCarrito } from '../utils/carrito';
 
 export function renderSectionContent(section) {
-    const comidas = {
-        pizzas: [
-          { nombre: 'Margarita', ingredientes: ['Tomate', 'Queso', 'Albahaca'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
-          { nombre: 'Pepperoni', ingredientes: ['Tomate', 'Queso', 'Pepperoni'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
-          // Agrega más comidas según sea necesario
-        ],
-        empanadas: [
-          { nombre: 'Carne', ingredientes: ['Carne molida', 'Cebolla', 'Condimentos'], imagen: require('../../assets/Foods/Pizzas/pizza.jpg')  },
-          { nombre: 'Pollo', ingredientes: ['Pollo desmenuzado', 'Cebolla', 'Condimentos'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg')  },
-          // Agrega más comidas según sea necesario
-        ],
-        lomos: [
-          { nombre: 'Lomo Completo', ingredientes: ['Lomo', 'Jamón', 'Queso'], imagen: require('../../assets/Foods/Pizzas/pizza.jpg')   },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          { nombre: 'Lomo con Queso', ingredientes: ['Lomo', 'Queso'], imagen:  require('../../assets/Foods/Pizzas/pizza.jpg') },
-          // Agrega más comidas según sea necesario
-        ],
-      };
-
-      const comidasSeccion = comidas[section] || [];
-
-      return (
-        <div className={styles.foodList}>
-         
-          {comidasSeccion.map((comida, index) => (
-            <div key={index} className={styles.foodItem}>
-              <h3 className={styles.name}>{comida.nombre}</h3>
-              { 
-                <Image src={comida.imagen} alt={comida.nombre}   width={230}
-                height={150} background-size={"cover"} /> 
-            
-                }
-              <ul >
-                {comida.ingredientes.map((ingrediente, i) => (
-                  <li key={i} className={styles.ingredients} >{ingrediente}</li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      );
-    }
+  const [carrito, setCarrito] = useState([]);
+  const [mostrarCarrito, setMostrarCarrito] = useState(false);
   
+  const toggleCarrito = () => {
+
+    setMostrarCarrito(!mostrarCarrito);
+  };
+
+  const handleAgregarAlCarrito = (comida) => {
+    const nuevosItems = agregarAlCarrito(carrito, comida);
+    setCarrito(nuevosItems);
+    setMostrarCarrito(false);
+  };
+ 
+  const cantidadEnCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
+
+  const comidasSeccion = comidas[section] || [];
+
+  return (
+    <section>
+      <CarritoButton toggleCarrito={toggleCarrito} cantidadEnCarrito={cantidadEnCarrito} />
+      <div className={styles.foodList}>
+        {comidasSeccion.map((comida, index) => (
+          <div key={index} className={styles.foodItem}>
+            <h3 className={styles.name}>{comida.nombre}</h3>
+            <Image src={comida.imagen} alt={comida.nombre} width={230} height={150} background-size={'cover'} />
+            <ul>
+              {comida.ingredientes.map((ingrediente, i) => (
+                <li key={i} className={styles.ingredients}>
+                  {ingrediente}
+                </li>
+              ))}
+            </ul>
+              <button className="btn btn-success" onClick={() => handleAgregarAlCarrito(comida)}>Agregar</button>
+          </div>
+        ))}
+      </div>
+      {mostrarCarrito && (
+       <Carrito carrito={carrito}  toggleCarrito={toggleCarrito}  />
+       )}
+     </section>
+   )}

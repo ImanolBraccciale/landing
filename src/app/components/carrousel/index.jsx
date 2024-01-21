@@ -5,7 +5,7 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Image from "next/image";
-import styles from "../../page.css";
+import   "../../page.css";
 
 export default class CarouselComponent extends Component {
     render() {
@@ -22,13 +22,14 @@ export default class CarouselComponent extends Component {
         return (
             <div >
                 <Slider {...settings}>
-                    <div >
+                    <div className={"slideContainer"}>
+                        <h1 className={"title"}>El sabor de lo Horno</h1>
+                        <h3 className="subtitle">Siempre acompañando cada porción</h3>
                         <Image
                             src={require('../../assets/Foods/Pizzas/1.jpg')}
                             alt="First slide"
                             style={
                                 {
-
                                     objectFit: "cover",
                                     width: "100%",
                                     height: "400px",
@@ -37,21 +38,22 @@ export default class CarouselComponent extends Component {
                             }
                         />
                     </div>
-                    <div >
+                   <div >
                         <Image
                             src={require('../../assets/Foods/Pizzas/2.jpg')}
                             alt="Second slide"
                             style={
                                 {
-                                    
                                     objectFit: "cover",
                                     width: "100%",
                                     height: "400px",
                                 }
                             }
                         />
-                    </div>
+                    </div> 
                 </Slider>
+
+                
             </div>
         );
     }
