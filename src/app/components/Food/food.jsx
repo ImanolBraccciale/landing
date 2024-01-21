@@ -1,6 +1,6 @@
 "use client"
 import React, { useState } from 'react';
- 
+
 import Image from 'next/image';
 import Carrito from '../Carrito/page';
 import { comidas } from '../Menu';
@@ -11,7 +11,7 @@ import { agregarAlCarrito } from '../utils/carrito';
 export function renderSectionContent(section) {
   const [carrito, setCarrito] = useState([]);
   const [mostrarCarrito, setMostrarCarrito] = useState(false);
-  
+
   const toggleCarrito = () => {
 
     setMostrarCarrito(!mostrarCarrito);
@@ -22,7 +22,7 @@ export function renderSectionContent(section) {
     setCarrito(nuevosItems);
     setMostrarCarrito(false);
   };
- 
+
   const cantidadEnCarrito = carrito.reduce((total, item) => total + item.cantidad, 0);
 
   const comidasSeccion = comidas[section] || [];
@@ -42,12 +42,13 @@ export function renderSectionContent(section) {
                 </li>
               ))}
             </ul>
-              <button className="btn btn-success" onClick={() => handleAgregarAlCarrito(comida)}>Agregar</button>
+            <button className="btn btn-success" onClick={() => handleAgregarAlCarrito(comida)}>Agregar</button>
           </div>
         ))}
       </div>
       {mostrarCarrito && (
-       <Carrito carrito={carrito}  toggleCarrito={toggleCarrito}  />
-       )}
-     </section>
-   )}
+        <Carrito carrito={carrito || []} toggleCarrito={toggleCarrito} />
+      )}
+    </section>
+  )
+}

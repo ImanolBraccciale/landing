@@ -33,27 +33,27 @@ export function Carrito({ carrito, toggleCarrito }) {
       </button>
       <h2 className="mb-4">Carrito de Compras</h2>
       <ul className="list-group mb-3">
-  {carritoActualizado && carritoActualizado.map((item, index) => (
+      {carritoActualizado && carritoActualizado.map((item, index) => (
     <li key={index} className="list-group-item d-flex justify-content-between align-items-center">
       <span>{item.nombre}</span>
-      <div className="btn-group">
-        <button
-          className="btn btn-outline-secondary"
-          onClick={() => handleActualizarCantidad(item, 'restar')}
-        >
-          -
-        </button>
-        <span className="btn btn-light">{item.cantidad}</span>
-        <button
-          className="btn btn-outline-secondary"
-          onClick={() => handleActualizarCantidad(item, 'sumar')}
-        >
-          +
-        </button>
-      </div>
-    </li>
-  ))}
-</ul>
+            <div className="btn-group">
+              <button
+                className="btn btn-outline-secondary"
+                onClick={() => handleActualizarCantidad(item, 'restar')}
+              >
+                -
+              </button>
+              <span className="btn btn-light">{item.cantidad}</span>
+              <button
+                className="btn btn-outline-secondary"
+                onClick={() => handleActualizarCantidad(item, 'sumar')}
+              >
+                +
+              </button>
+            </div>
+          </li>
+        ))}
+      </ul>
 
       <button className="btn btn-success" onClick={handleEnviarPorWhatsApp}>
         Enviar por WhatsApp
