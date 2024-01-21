@@ -1,0 +1,30 @@
+/* Footer.css */
+
+.footer {
+    background-color: #2c1e15; /* Marrón oscuro */
+    color: #d2b48c; /* Beige o cualquier color claro para el texto */
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .footer-section {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .footer h2 {
+    color: #fff; /* Blanco para los títulos */
+  }
+  
+  .footer a {
+    color: #d2b48c; /* Beige o cualquier color claro para los enlaces */
+    text-decoration: none;
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+  
