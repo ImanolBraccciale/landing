@@ -4,7 +4,7 @@ import Image from 'next/image';
 
 const CarritoButton = ({ toggleCarrito, cantidadEnCarrito }) => {
   return (
-    <div className="position-fixed top-0 end-0 translate-middle-x m-3">
+    <div className="position-fixed top-1 end-0 translate-middle-x m-3">
       <button
         className="btn btn-info btn-lg p-2"
         style={{ backgroundColor: 'rgba(255, 255, 255, 0.7)' }}

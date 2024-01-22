@@ -29,8 +29,9 @@ export function renderSectionContent(section) {
 
   return (
     <section>
-      <CarritoButton toggleCarrito={toggleCarrito} cantidadEnCarrito={cantidadEnCarrito} />
+      
       <div className={styles.foodList}>
+      <CarritoButton toggleCarrito={toggleCarrito} cantidadEnCarrito={cantidadEnCarrito} />
         {comidasSeccion.map((comida, index) => (
           <div key={index} className={styles.foodItem}>
             <h3 className={styles.name}>{comida.nombre}</h3>
