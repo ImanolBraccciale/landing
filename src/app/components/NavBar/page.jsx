@@ -1,14 +1,22 @@
 "use client"
-import Image from "next/image";
 import Link from "next/link";
 import "../../css/NavBar.css";
 
+
 export default function NavBar() {
+  const toggleMenu = () => {
+    const menu = document.getElementById('navLinks');
+    menu.classList.toggle('show');
+  };
+
   return (
     <main className="main">
       <nav>
         <div className="img"></div>
-        <ul>
+        <button className="menu-btn" onClick={toggleMenu}>
+          &#9776; {/* Hamburger icon */}
+        </button>
+        <ul id="navLinks">
           <Link href="/">
             <li className="nav-item red-btn">Home</li>
           </Link>
@@ -18,7 +26,6 @@ export default function NavBar() {
           <Link href="/About">
             <li className="nav-item green-btn">Sobre Nosotros</li>
           </Link>
-  
         </ul>
       </nav>
     </main>

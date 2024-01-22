@@ -23,8 +23,8 @@ export default class CarouselComponent extends Component {
             <div >
                 <Slider {...settings}>
                     <div className={"slideContainer"}>
-                        <h1 className={"title"}>El sabor de lo Horno</h1>
-                        <h3 className="subtitle">Siempre acompañando cada porción</h3>
+                        <h1 className={"title"}>El sabor del Horno</h1>
+                        <h3 className={"subtitle"}>Siempre acompañando cada porción</h3>
                         <Image
                             src={require('../../assets/Foods/Pizzas/1.jpg')}
                             alt="First slide"

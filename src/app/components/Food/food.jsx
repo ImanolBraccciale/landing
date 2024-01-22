@@ -34,11 +34,16 @@ export function renderSectionContent(section) {
         {comidasSeccion.map((comida, index) => (
           <div key={index} className={styles.foodItem}>
             <h3 className={styles.name}>{comida.nombre}</h3>
-            <Image src={comida.imagen} alt={comida.nombre} width={230} height={150} background-size={'cover'} />
-            <ul>
+            <div className={styles.imagen } >
+            <Image src={comida.imagen}   alt={comida.nombre}  layout="responsive"/>
+            </div>
+            <ul className={styles.ingredients}>
               {comida.ingredientes.map((ingrediente, i) => (
-                <li key={i} className={styles.ingredients}>
-                  {ingrediente}
+                <li key={i}  >
+                  <span>
+
+                    {ingrediente}
+                  </span>
                 </li>
               ))}
             </ul>
