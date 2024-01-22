@@ -6,7 +6,7 @@
     display: none; /* Initially hide the menu button */
 }
 
-nav {
+.nav {
     height: auto; /* Change height to auto */
     display: flex;
     justify-content: space-between; /* Adjust space between logo and menu button */

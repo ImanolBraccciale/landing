@@ -12,6 +12,8 @@ export default function Productos() {
   
   return (
     <section className="backgroundP">
+      <div className='asd'>
+
       <h3 className="tittleP">Productos deliciosos de nuestro menú</h3>
      
       <nav className="navbarP">
@@ -27,6 +29,7 @@ export default function Productos() {
           </li>
         </ul>
       </nav>
+      </div>
 
       {renderSectionContent(currentSection)}
  

@@ -11,7 +11,7 @@ export default function NavBar() {
 
   return (
     <main className="main">
-      <nav>
+      <nav className="nav">
         <div className="img"></div>
         <button className="menu-btn" onClick={toggleMenu}>
           &#9776; {/* Hamburger icon */}

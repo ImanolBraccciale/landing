@@ -1,12 +1,14 @@
+ .navbarP {
+  
+   z-index: 1;
+   padding: 10px;
+   text-align: center;
+   position: relative;
+   margin-top: 2em;
  
-.navbarP {
-  z-index: 1;
-  padding: 10px;
-  text-align: center;
-  position: relative;
-}
+ }
 
-.navListP {
+ .navListP {
   background-color: rgba(255, 255, 255, 0.473);
   border-radius: 7px;
   list-style: none;
@@ -15,50 +17,65 @@
   display: flex;
   justify-content: center;
   border: solid #3333334d 1px;
-}
+ }
 
-.navListP li {
+ .navListP li {
   
-  border-radius: 6px;
-  padding: 5px;
-  margin: 0 15px;
-  cursor: pointer;
-  font-size: 16px;
-  font-weight: bold;
-  color: #333;
-  transition: color 0.3s;
-}
+   border-radius: 6px;
+   padding: 5px;
+   margin: 0 15px;
+   cursor: pointer;
+   font-size: 1em;
+   font-weight: bold;
+   color: #333;
+   transition: color 0.3s;
+ }
 
-.navListP li:hover {
+ .navListP li:hover {
 
-  color: #ff9900;
-}
+   color: #ff9900;
+ }
 
-.navList li.active {
-  background-color: #3F2E33;
-  color: #ffffff;
-}
+ .navList li.active {
+   background-color: #3F2E33;
+   color: #ffffff;
+ }
 
-.tittleP {
+ .tittleP {
    position: relative;
    top: 0.5em;
-  background-color: rgba(255, 255, 255, 0.473);
-  font-family: "Merriweather", "Montserrat", sans-serif;
-  font-size: 36px;
-  color: #590202;
-  margin-left: 1.2em;
-  padding: 0.3em;
-  width: 19.3em;
-  border-radius: 17px;
-  border: solid #3333334d 1px;
+   background-color: rgba(255, 255, 255, 0.473);
+   font-family: "Merriweather", "Montserrat", sans-serif;
+   font-size: 2em;
+   color: #590202;
+   padding: 0.3em;
+ 
+   border-radius: 17px;
+   border: solid #3333334d 1px;
+ }
+
+ .backgroundP {
+   background-image: url("../assets/Foods/Pizzas/fondo.jpg");
+   background-size: cover;
+   width: 100%;
+   height: 100%;
+   background-repeat: no-repeat;
+    
+   align-items: center;
+   justify-content: center;
+ 
+ }
+.asd{
+  display: grid;
+  place-items: center;
+  
 }
 
-.backgroundP {
-  background-image: url("../assets/Foods/Pizzas/fondo.jpg");
-  background-size: cover;
-  width: 100%;
-  height: 100%;
-  background-repeat: no-repeat;
+ @media (max-width: 767px) {
 
+   .tittleP {
+    font-size: 2em;
+    width: 10em;
 
-}
+   }
+ }
