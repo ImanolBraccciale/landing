@@ -1,13 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@1,300&display=swap');
 
  
+
 .marco {
     margin-top: 2em;
     margin-left: 4em;
-    width: 45em;
-    height: 30em;
+    width: 55em;
     position: relative;
-    
+    background-size: cover;
+    overflow: hidden; 
+    margin-bottom: 1em;
+}
+
+.marco img {
+    width: 100%;
+    height: 100%;
+    border-radius: 1em;
 }
 
 .texto {
@@ -50,5 +58,38 @@
     margin-top: -0.3em;
     font-size: 2.5em;
     border-radius: 8px;
-   
+
 }
+
+ 
+@media (max-width: 767px) {
+    .h2About {
+        position: relative;
+        margin-top: 0.4em;
+        font-size: 1.5em;
+    }
+    
+    .marco {
+        width: 100%;
+        margin-left: 0; /* Eliminar el margen izquierdo en pantallas pequeñas */
+    }
+
+    .containerAbout {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .texto {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.164);
+        position: relative;
+        background-color: #ffffff;
+        top: 0;
+        left: 0;
+        transform: translate(0%, 0%);
+        max-width: 400px;
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+} 
