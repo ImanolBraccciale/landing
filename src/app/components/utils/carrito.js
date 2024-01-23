@@ -1,6 +1,6 @@
 export const enviarPorWhatsApp = (menuWSP) => {
     const mensaje = menuWSP.mensaje;
-    const enlaceWhatsApp = `https://wa.me/+5493388430464/?text=${encodeURIComponent(mensaje)}`;
+    const enlaceWhatsApp = `https://wa.me/+5493388675439/?text=${encodeURIComponent(mensaje)}`;
     window.open(enlaceWhatsApp, '_blank');
 };
 
