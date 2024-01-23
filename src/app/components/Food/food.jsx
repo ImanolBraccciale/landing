@@ -29,14 +29,14 @@ export function renderSectionContent(section) {
 
   return (
     <section>
-      
+
       <div className={styles.foodList}>
-      <CarritoButton toggleCarrito={toggleCarrito} cantidadEnCarrito={cantidadEnCarrito} />
+        <CarritoButton toggleCarrito={toggleCarrito} cantidadEnCarrito={cantidadEnCarrito} />
         {comidasSeccion.map((comida, index) => (
           <div key={index} className={styles.foodItem}>
             <h3 className={styles.name}>{comida.nombre}</h3>
-            <div className={styles.imagen } >
-            <Image src={comida.imagen}   alt={comida.nombre}  layout="responsive"/>
+            <div className={styles.imagen} >
+              <Image src={comida.imagen} alt={comida.nombre} layout="responsive" />
             </div>
             <ul className={styles.ingredients}>
               {comida.ingredientes.map((ingrediente, i) => (
