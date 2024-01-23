@@ -17,8 +17,10 @@
 .img {
     position: relative;
     background-size: cover;
+    left: 5%;
     height: 5vw;
     width: 5vw;
+    background-repeat: no-repeat;
     background-image: url("../assets/logo.jpg");
 }
 ul {

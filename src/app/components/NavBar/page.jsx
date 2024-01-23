@@ -14,7 +14,7 @@ export default function NavBar() {
       <nav className="nav">
         <div className="img"></div>
         <button className="menu-btn" onClick={toggleMenu}>
-          &#9776; {/* Hamburger icon */}
+          &#9776;
         </button>
         <ul id="navLinks">
           <Link href="/">
