@@ -16,7 +16,7 @@ export default function NavBar() {
         <button className="menu-btn" onClick={toggleMenu}>
           &#9776;
         </button>
-        <ul id="navLinks">
+        <ul id="navLinks" onClick={toggleMenu}>
           <Link href="/">
             <li className="nav-item red-btn">Home</li>
           </Link>
